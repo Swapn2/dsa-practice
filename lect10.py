@@ -34,15 +34,15 @@
 # reverse_array(0,x)
 # print(x)
 
-# reverse string using recursion
+# # reverse string using recursion
 
 # def reverse_string(i,s):
 #     if i >= len(s)//2:
-#         return 
+#         return True
 #     if s[i] != s[len(s) - i-1]:
 #         return False
-#     reverse_string(i+1,s)
-#     return True
+#     return reverse_string(i+1,s)
+    
 
 # s = input()
 # print(reverse_string(0,s))
