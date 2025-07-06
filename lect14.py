@@ -40,18 +40,22 @@
 
 # Insertion Sort 
 
-# arr = list(map(int, input().split()))
-# print(arr)
+arr = list(map(int, input().split()))
+print(arr)
 
-# def swap(arr,i,j):
-#     arr[i], arr[j] = arr[j] , arr[i]
+def swap(arr,i,j):
+    arr[i], arr[j] = arr[j] , arr[i]
 
-# def insertion_sort(arr):
-#     for i in range(len(arr)):
-#         j = i
-#         while(j>0 and arr[j-1] > arr[j]):
-#             swap(arr,j,j-1)
-#             j -=1
-#     return arr
+def insertion_sort(arr):
+    for i in range(len(arr)):
+        j = i
+        didswap = 0
+        while(j>0 and arr[j-1] > arr[j]):
+            swap(arr,j,j-1)
+            didswap = 1
+            j -=1
+        if didswap == 0:
+            break
+    return arr
 
-# print(insertion_sort(arr))
+print(insertion_sort(arr))
