@@ -70,13 +70,13 @@
 # arr = list(map(int, input().split()))
 # print(max_consecutive_ones(arr))
 
-# find the number that appears only once in an array where every other number appears twice 
-# XOR approach
+# # find the number that appears only once in an array where every other number appears twice 
+# # XOR approach
 
-def find_unique(arr):
-    xor = 0
-    for i in range(len(arr)):
-        xor ^= arr[i]
-    return xor
-arr = list(map(int, input().split()))
-print(find_unique(arr))
+# def find_unique(arr):
+#     xor = 0
+#     for i in range(len(arr)):
+#         xor ^= arr[i]
+#     return xor
+# arr = list(map(int, input().split()))
+# print(find_unique(arr))
