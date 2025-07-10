@@ -55,24 +55,24 @@
 # k = int(input())
 # print(longest_subarray_with_sum_k(arr, k))
 
-#  optimal approach using 2 pointers
+# #  optimal approach using 2 pointers
 
-def longest_subarray_with_sum_k(arr, k):
-    left = 0
-    sum = arr[0]
-    max_len = 0
-    right = 0
-    while (right < len(arr)):
-        right +=1 
-        if right <len(arr):
-            sum +=arr[right]
-        if sum ==k:
-            max_len = max(max_len , right-left +1)
-        while (sum >k and left < right ):
-            sum -=arr[left]
-            left+=1 
-    return max_len
+# def longest_subarray_with_sum_k(arr, k):
+#     left = 0
+#     sum = arr[0]
+#     max_len = 0
+#     right = 0
+#     while (right < len(arr)):
+#         right +=1 
+#         if right <len(arr):
+#             sum +=arr[right]
+#         if sum ==k:
+#             max_len = max(max_len , right-left +1)
+#         while (sum >k and left < right ):
+#             sum -=arr[left]
+#             left+=1 
+#     return max_len
 
-arr = list(map(int, input().split()))
-k = int(input())
-print(longest_subarray_with_sum_k(arr, k))
+# arr = list(map(int, input().split()))
+# k = int(input())
+# print(longest_subarray_with_sum_k(arr, k))
