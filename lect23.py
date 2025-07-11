@@ -26,26 +26,26 @@
 #             return key
 # 
 
-# optimal approach Moores voting algorithm 
+# # optimal approach Moores voting algorithm 
 
-def majority(arr):
-    el = 0
-    count = 0
-    n = len(arr)//2
-    for i in range(len(arr)):
-        if count ==0:
-            el = arr[i]
-            count = 1
-        elif arr[i] == el:
-            count +=1
-        else:
-            count -=1
-    occur = 0
-    for i in range(len(arr)):
-        if arr[i] == el:
-            occur +=1
-    if occur > n:
-        return el
+# def majority(arr):
+#     el = 0
+#     count = 0
+#     n = len(arr)//2
+#     for i in range(len(arr)):
+#         if count ==0:
+#             el = arr[i]
+#             count = 1
+#         elif arr[i] == el:
+#             count +=1
+#         else:
+#             count -=1
+#     occur = 0
+#     for i in range(len(arr)):
+#         if arr[i] == el:
+#             occur +=1
+#     if occur > n:
+#         return el
     
-arr = list(map(int, input().split()))
-print(majority(arr))
+# arr = list(map(int, input().split()))
+# print(majority(arr))
