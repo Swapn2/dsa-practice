@@ -10,7 +10,7 @@ def next_permutation(arr):
     if index == -1:
         reverse(arr, 0, n-1)
         return arr
-    for i in range(n-1,-1,-1):
+    for i in range(n-1,index,-1):
         if arr[i] > arr[index]:
             arr[i],arr[index] = arr[index],arr[i]
             break
