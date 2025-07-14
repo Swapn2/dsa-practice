@@ -26,20 +26,22 @@
 
 
 # #  number of subarray with sum = k optimal approach 
-# def n_subarray(arr,k):
-#     hash = {}
-#     hash[0] = 1
-#     sum = 0
-#     count = 0
-#     for i in range(len(arr)):
-#         sum = sum + arr[i]
-#         rem = sum -k
-#         if rem in hash:
-#             count = count + hash[rem]
-#             hash[rem] = hash[rem] +1
-#         if sum not in hash:
-#             hash[sum] = 1
-#     return count
+def n_subarray(arr,k):
+    hash = {}
+    hash[0] = 1
+    sum = 0
+    count = 0
+    for i in range(len(arr)):
+        sum = sum + arr[i]
+        rem = sum -k
+        if rem in hash:
+            count = count + hash[rem]
+            hash[rem] = hash[rem] +1
+        if sum in hash:
+            hash[sum] += 1
+        else:
+            hash[sum] = 1
+    return count
 
 arr= list(map(int, input().split()))
 k = int(input())

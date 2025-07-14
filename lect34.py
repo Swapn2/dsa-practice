@@ -15,12 +15,11 @@ def nCr(r,c):
 
 def Nthrow(r):
     ans = 1
-    for i in range(1,r+1):
-        print(int(ans) ,end =' ')
-        ans = ans*((r-i)/i)
-    # print(int(ans))
-    print('\n')
-
+    temp = []
+    for i in range(r+1):
+        temp.append(ans)
+        ans = ans*(r-i)//(i+1)
+    return temp
 
 # # 3. given row print entire pascal Triangle brute approach 
 # def pascaltriangle(r):
@@ -36,8 +35,10 @@ def Nthrow(r):
 # optimal approach 
 
 def pascaltriangle(r):
-    for i in range(1,r+1):
-        Nthrow(i)
+    ans = []
+    for i in range(r):
+        ans.append(Nthrow(i))
+    return ans
 
             
 
@@ -48,5 +49,5 @@ r = int(input())
 c = int(input())
 print(nCr(r,c))
 Nthrow(r)
-pascaltriangle(r)
-# print(pascaltriangle(r))
+# pascaltriangle(r)
+print(pascaltriangle(r))
