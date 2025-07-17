@@ -1,21 +1,21 @@
 #  selection sort 
 
-# arr = list(map(int, input().split()))
-# print(arr)
+arr = list(map(int, input().split()))
+print(arr)
 
-# def swap(arr , i ,j):
-#     arr[i],arr[j] = arr[j] , arr[i]
+def swap(arr , i ,j):
+    arr[i],arr[j] = arr[j] , arr[i]
 
-# def selection_sort(arr):
-#     for i in range(len(arr)-1):
-#         mini  = i
-#         for j in range(i,len(arr)):
-#             if arr[j] < arr[mini]:
-#                 mini = j
-#         swap(arr,i,mini)
-#     return arr
+def selection_sort(arr):
+    for i in range(len(arr)-1):
+        mini  = i
+        for j in range(i,len(arr)):
+            if arr[j] < arr[mini]:
+                mini = j
+        swap(arr,i,mini)
+    return arr
 
-# print(selection_sort(arr))
+print(selection_sort(arr))
         
 # # #  Bubble Sort 
 
