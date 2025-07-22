@@ -45,7 +45,6 @@
 #     else:
 #         print("not palindrome")
     
-
 # palindrome alternative
 
 # def palindrome(n):
