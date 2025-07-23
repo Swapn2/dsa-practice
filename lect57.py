@@ -20,6 +20,8 @@ def boolday(arr,n,k):
     low = min(arr)
     high = max(arr)
     ans = -1
+    if n*k < len(arr):
+        return -1
     while(low <= high):
         mid = (low+high)//2
         if possible(arr, mid,n,k) == True:
