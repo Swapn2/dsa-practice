@@ -2,12 +2,12 @@
 #  it is sure that answer will be with in the range of arr means min(arr) to max(arr)
 
 #  brute approach 
-# def Kth(nums,k):
-#     for i in range(len(nums)):
-#         if nums[i] < k:
-#             k+=1 
-#         else:
-#             return k
+def Kth(nums,k):
+    for i in range(len(nums)):
+        if nums[i] < k:
+            k+=1 
+        else:
+            return k
         
 
 #  BS appraoch 
