@@ -68,6 +68,8 @@
 # optimal approach 
 
 def median(arr1,arr2):
+    if len(arr1) > len(arr2):
+        return median(arr2, arr1)
     n1 = len(arr1)
     n2 = len(arr2)
     low = 0
