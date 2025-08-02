@@ -24,29 +24,44 @@ def traverse(head):
 
 # Brute force approach 
 
-def group_odd_even(head):
-    curr = head
-    newhead = Node(-1)
-    dummy = newhead
-    # for even index
-    while curr:
-        newnode = Node(curr.val)
-        dummy.next = newnode
-        dummy = dummy.next
-        if curr.next.next: 
-            curr = curr.next.next
-    # for odd index 
-    curr = head.next
-    while curr:
-        newnode = Node(curr.val)
-        dummy.next = newnode
-        dummy = dummy.next
-        if curr.next.next:
-            curr = curr.next.next
-    return dummy.next
 
+# def group_odd_even(head):
+#     temp = head
+#     arr = []
+#     while(temp!= None and temp.next!= None ):
+#         arr.append(temp.val)
+#         temp = temp.next.next
+#     if temp:
+#         arr.append(temp.val)
+#         temp = temp.next
+#     temp = head.next
+#     while(temp != None and temp.next != None):
+#         arr.append(temp.val)
+#         temp = temp.next.next
+#     if temp:
+#         arr.append(temp.val)
+#         temp = temp.next
+#     temp = head
+#     for i in range(len(arr)):
+#         temp.val = arr[i]
+#         temp = temp.next
+#     return head
+
+#  optimal approach 
+
+def group_odd_even_optimal(head):
+    odd = head
+    evenhead = head.next
+    even = evenhead
+    while(even != None and even.next != None):
+        odd.next = odd.next.next
+        even.next = even.next.next
+        odd = odd.next
+        even = even.next
+    odd.next = evenhead
+    return head
         
 head = create_ll(arr)
 traverse(head)
-head = group_odd_even(head)
+head = group_odd_even_optimal(head)
 traverse(head)
