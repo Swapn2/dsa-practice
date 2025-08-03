@@ -47,8 +47,7 @@ def Reverse1(head):
         curr.next = prev
         prev = curr
         curr = nextnode
-    head = prev
-    return head 
+    return prev
 
 
 #  recursive approach

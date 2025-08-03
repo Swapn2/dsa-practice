@@ -21,22 +21,55 @@ def traverse(head):
         head = head.next
     print("\n")
 
-#  Reverse brute approach
+# #  Reverse brute approach
+# def palindrome(head):
+#     temp = head 
+#     stack = []
+#     while(temp):
+#         stack.append(temp.val)
+#         temp = temp.next
+#     temp = head 
+#     while(temp):
+#         if temp.val != stack.pop():
+#             return False
+#         temp = temp.next
+#     return True
+
+
+def reverse(head):
+    curr = head
+    prev = None
+    while(curr):
+        nextnode = curr.next
+        curr.next = prev 
+        prev = curr
+        curr = nextnode
+    return prev
+ 
+    
+#  optimal approach:
 def palindrome(head):
-    temp = head 
-    stack = []
-    while(temp):
-        stack.append(temp.val)
-        temp = temp.next
-    temp = head 
-    while(temp):
-        if temp.val != stack.pop():
+    slow = head
+    fast = head
+    while(fast and fast.next):
+        slow = slow.next
+        fast = fast.next.next
+    newnode = reverse(slow)
+    second = newnode
+    first = head
+    while(second):
+        if first.val != second.val:
             return False
-        temp = temp.next
+        first = first.next
+        second = second.next
     return True
+     
+
 
 #  function call 
 
 head = create_ll(arr)
+traverse(head)
+head = reverse(head)
 traverse(head)
 print(palindrome(head))

@@ -1,62 +1,27 @@
-# Reverse a sLL 
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 
-class Node:
-    def __init__(self, val = 0 , next = None):
-        self.val = val 
-        self.next = next 
+def find_middle(head):
+    slow = fast = head
 
-    
-arr = list(map(int,input().split()))
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
 
-def create_ll(arr):
-    head = Node(arr[0])
-    curr = head
-    for i in range(1, len(arr)):
-        new_node = Node(arr[i])
-        curr.next = new_node
-        curr = new_node
-    return head
-    
+    return slow  # This is the middle node
 
-def traverse(head):
-    while(head):
-        print(head.val, end =" ")
-        head = head.next
-    print("\n")
-#  Reverse brute approach 
-
-def Reverse(head):
-    curr = head
-    stack = []
-    while(curr):
-        stack.append(curr.val)
+# Helper to create a linked list
+def create_list(arr):
+    dummy = ListNode(-1)
+    curr = dummy
+    for val in arr:
+        curr.next = ListNode(val)
         curr = curr.next
-    curr = head
-    while(curr):
-        curr.val = stack.pop()
-        curr = curr.next 
-    return head 
+    return dummy.next
 
-#  Reverse optimal approach 
-
-def Reverse1(head):
-    curr = head 
-    prev = None
-    while(curr):
-        nextnode = curr.next 
-        curr.next = prev
-        prev = curr
-        curr = nextnode
-    head = prev
-    return head 
-
-
-
-#  function calls
-head = create_ll(arr) 
-traverse(head)
-head = Reverse(head)
-traverse(head)
-head = Reverse1(head)
-traverse(head)
-
+# Example usage
+head = create_list([1, 2, 3, 4])
+middle = find_middle(head)
+print("Middle value:", middle.val)  # Output: 3
