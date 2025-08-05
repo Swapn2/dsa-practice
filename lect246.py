@@ -59,9 +59,11 @@ def palindrome(head):
     first = head
     while(second):
         if first.val != second.val:
+            reverse(newnode)
             return False
         first = first.next
         second = second.next
+    reverse(newnode)  # Restore the original list
     return True
      
 
