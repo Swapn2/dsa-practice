@@ -1,4 +1,4 @@
-#  delete all occurrences of a given value in a linked list
+#  delete all occurrences of a given value in a doubly linked list
 
 class Node:
     def __init__(self,val = 0, next = None, prev = None):
