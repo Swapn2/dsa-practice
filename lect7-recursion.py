@@ -14,7 +14,7 @@ def print_subsequences(index , l , arr,sum,total):
 
 
 arr = list(map(int ,input().split()))
-
+arr.sort()
 total = int(input())
 l = []
 print_subsequences(0, l, arr, 0, total)
@@ -27,7 +27,7 @@ print_subsequences(0, l, arr, 0, total)
 # printing sequences where sum is k 
 
 # def print_subsequences(index , l , arr,sum,total):
-#     if index >= len(arr):
+#     if index == len(arr):
 #         if sum == total:
 #             print(l)
 #             return True
@@ -44,8 +44,26 @@ print_subsequences(0, l, arr, 0, total)
 #     return False
 
 
-# arr = list(map(int ,input().split()))
+#  count the subsequences where sum is k
 
+# def print_subsequences_count(index , l , arr,sum ,total):
+#     if index == len(arr):
+#         if sum == total:
+#             return 1
+#         else:
+#             return 0
+#     l.append(arr[index])
+#     sum += arr[index]
+#     left = print_subsequences_count(index+1,l,arr,sum,total)
+#     l.pop()
+#     sum -= arr[index]
+#     right = print_subsequences_count(index+1 , l, arr,sum,total)
+#     return left+right
+
+
+
+
+# arr = list(map(int ,input().split()))
 # total = int(input())
 # l = []
-# print_subsequences(0, l, arr, 0, total)
+# print(print_subsequences_count(0, l, arr, 0, total))

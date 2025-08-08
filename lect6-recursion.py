@@ -11,6 +11,6 @@ def print_subsequence(index, l , arr):
 
 
 arr = list(map(int,input().split()))
-
+arr.sort()
 l = []
 print_subsequence(0,l,arr)
