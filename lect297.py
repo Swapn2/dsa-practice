@@ -162,69 +162,119 @@
 #  queue using link list 
 
 
-class Node:
-    def __init__(self,data, next = None):
-        self.data = data
-        self.next = next 
+# class Node:
+#     def __init__(self,data, next = None):
+#         self.data = data
+#         self.next = next 
 
-class Queue:
-    def __init__(self):
-        self.head = None
-        self.curr = self.head
-        self.size = 0
+# class Queue:
+#     def __init__(self):
+#         self.head = None
+#         self.curr = self.head
+#         self.size = 0
 
-    def push(self,item):
-        newnode = Node(item)
-        if self.head == None:
-            self.head = newnode
-            self.curr = self.head
-            self.size+=1
+#     def push(self,item):
+#         newnode = Node(item)
+#         if self.head == None:
+#             self.head = newnode
+#             self.curr = self.head
+#             self.size+=1
         
-        else:
-            self.curr.next = newnode
-            self.curr = newnode
-            self.size +=1
+#         else:
+#             self.curr.next = newnode
+#             self.curr = newnode
+#             self.size +=1
 
-    def pop(self):
-        temp = self.head
-        if self.head == None:
-            print("blank")
-        elif(self.head.next == None):
-            val = self.head.data
-            self.head= None
-            self.size-=1
-            print(val)
-            return
-        else:
-            val = temp.data
-            self.head = self.head.next
-            self.size -=1
-            print(val)
-            return
+#     def pop(self):
+#         temp = self.head
+#         if self.head == None:
+#             print("blank")
+#         elif(self.head.next == None):
+#             val = self.head.data
+#             self.head= None
+#             self.size-=1
+#             print(val)
+#             return
+#         else:
+#             val = temp.data
+#             self.head = self.head.next
+#             self.size -=1
+#             print(val)
+#             return
 
-    def peek(self):
-        temp = self.head
-        if self.head == None:
+#     def peek(self):
+#         temp = self.head
+#         if self.head == None:
+#             print("blank")
+#         elif(self.head.next == None):
+#             print(self.head.data)
+#             return
+#         else:
+#             val = temp.data
+#             print(val)
+#             return 
+
+# s= Queue()
+# s.push(7)
+# s.push(2)
+# s.push(3)
+# s.push(5)
+# s.pop()
+# s.peek()
+# s.pop()
+# s.pop()
+# s.peek()
+
+# implementing stack using queues
+
+
+# from collections import deque
+
+# class stackusingqueue:
+
+#     def __init__(self):
+#         self.q = deque()
+
+#     def push(self,item):
+#         self.q.append(item)
+#         for _ in range(len(self.q)-1):
+#             self.q.append(self.q.popleft())
+
+#     def pop(self):
+#         if self.q:
+#             print(self.q.popleft())
+#             return 
+#         else:
+#             print("stack underflow")
+#             return None
+#     def peek(self):
+#         if self.q:
+#             print(self.q[0])
+#             return self.q[0]
+#         else:
+#             print("stack is empty")
+#             return None
+        
+#  queue using stacks
+
+class QueueUsingStacks:
+    def __init__(self):
+        self.s = []
+
+    def enque(self,item):
+        self.s.append(item)
+
+    def deque(self):
+        if self.s == None:
             print("blank")
-        elif(self.head.next == None):
-            print(self.head.data)
-            return
-        else:
-            val = temp.data
-            print(val)
             return 
-
-s= Queue()
-s.push(7)
-s.push(2)
-s.push(3)
-s.push(5)
-s.pop()
-s.peek()
-s.pop()
-s.pop()
-s.peek()
-
-
-
-
+        else:
+            x = self.s.pop()
+            if self.s ==None:
+                print(x)
+                return 
+            item = self.deque()
+            self.enque(item)
+            print(item)
+            return
+        
