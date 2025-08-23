@@ -18,7 +18,9 @@ def balanced(s):
                 continue
             else:
                 return False
-    return True
+    if len(st) == 0:
+        return True
+    return False
 
 print(balanced(s))
 
