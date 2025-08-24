@@ -48,4 +48,3 @@ def findtotal(nums):
 
 print(findtotal(nums))
             
-        
