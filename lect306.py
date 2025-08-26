@@ -55,30 +55,30 @@ def sum_min_subarray(arr):
 
 
 def findnge(arr):
-    nse = [0]*len(arr)
+    nge = [0]*len(arr)
     st = []
     for i in range(len(arr)-1,-1,-1):
         while(len(st)!=0 and arr[st[-1]] <= arr[i]):
             st.pop()
         if len(st)==0:
-            nse[i] = len(arr)
+            nge[i] = len(arr)
         else:
-            nse[i] = st[-1]
+            nge[i] = st[-1]
         st.append(i)
-    return nse
+    return nge
 
 def findpgee(arr):
-    psee = [0]*len(arr)
+    pgee = [0]*len(arr)
     st = []
     for i in range(len(arr)):
         while(len(st)!=0 and arr[st[-1]] < arr[i]):
             st.pop()
         if len(st)==0:
-            psee[i] = -1
+            pgee[i] = -1
         else:
-            psee[i] = st[-1]
+            pgee[i] = st[-1]
         st.append(i)
-    return psee
+    return pgee
 
 def sum_max_subarray(arr):
     total = 0
