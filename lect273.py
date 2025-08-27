@@ -1,3 +1,4 @@
+
 #  maximum point you can obtain from card (either i can choose from right or either from left )
 
 arr = list(map(int,input().split()))
@@ -15,6 +16,7 @@ for i in range(k-1 , -1 ,-1):
     rsum = rsum +arr[rindex]
     rindex = rindex -1
     maxsum = max(maxsum, lsum+rsum)
+    
 print(maxsum)
 
 
