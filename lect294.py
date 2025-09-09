@@ -36,7 +36,7 @@ def function(s):
             min = 0
         if max <0:
             return False
-    print(min , max)
+    # print(min , max)
     return min == 0
     
 print(function(s))
