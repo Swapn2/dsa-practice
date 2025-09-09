@@ -64,8 +64,6 @@ def dfsheight(root):
     return max(lh,rh)+1
 
 
-
-
 print(balancedtree(root))
 
     
